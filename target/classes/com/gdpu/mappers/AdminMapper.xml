@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gdpu.dao.AdminDao">
+
+	<resultMap type="Admin" id="AdminResult">
+		<result property="adminId" column="admin_id"/>
+		<result property="userName" column="userName"/>
+		<result property="password" column="password"/>
+		<result property="logintime" column="logintime"/>
+	</resultMap>
+	
+	<select id="findAll"  resultMap="AdminResult">
+		select * from admin
+	</select>
+		
+	<insert id="addAdmin" parameterType="Admin">
+		insert into admin values(null,#{userName},#{password},now())
+	</insert>
+	<select id="findAdmin" parameterType="Map" resultMap="AdminResult">
+		select * from admin where userName=#{userName} and admin.password=#{password}
+	</select>
+	<update id="changepwd" parameterType="Admin">
+		update admin set password=#{password} where admin_id=#{adminId}
+	</update>
+	<update id="updatelogintime" parameterType="Admin">
+		update admin set logintime=#{logintime} where admin_id=#{adminId}
+	</update>
+	<select id="findNameById" parameterType="int" resultMap="AdminResult">
+		select * from admin where admin_id=#{adminId}
+	</select>
+	<select id="findAdminByName" parameterType="String" resultMap="AdminResult">
+		select * from admin where userName=#{userName}
+	</select>
+	
+</mapper> 

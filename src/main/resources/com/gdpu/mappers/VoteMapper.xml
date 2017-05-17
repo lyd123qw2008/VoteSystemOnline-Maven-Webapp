@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gdpu.dao.VoteDao">
+	<resultMap type="Vote" id="VoteResult">
+		<result property="voteId" column="vote_id"/>
+		<result property="title" column="title"/>
+		<result property="createdate" column="createdate"/>
+		<result property="type" column="type"/>
+		<result property="publish" column="publish"/>
+		<result property="adminId" column="admin_id"/>
+		<association property="admin" column="admin_id" select="com.gdpu.dao.AdminDao.findNameById"></association>
+	</resultMap>
+	
+	<insert id="addVote" parameterType="Vote" useGeneratedKeys="true" keyProperty="voteId">
+		insert into Vote(title,createdate,type,publish,admin_id)
+		 values(#{title},#{createdate},#{type},#{publish},#{adminId})
+	</insert>
+	<select id="findIdByTitle" parameterType="Vote" resultType="int">
+		select * from Vote where title=#{title}
+	</select>
+	<select id="findVote" resultMap="VoteResult">
+		select * from Vote
+	</select>
+	<select id="findVoteById" parameterType="int" resultMap="VoteResult">
+		select * from Vote where vote_id=#{voteId}
+	</select>
+	<update id="updateVote" parameterType="Vote">
+		update Vote set title=#{title},createdate=#{createdate},type=#{type},publish=#{publish},admin_id=#{adminId} where admin_id=#{adminId}
+	</update>
+	<select id="findVoteByTitle" parameterType="Vote" resultMap="VoteResult">
+		select * from Vote where
+		<if test='title != "%null%"'>
+			title like #{title}
+		</if>
+	</select>
+	<select id="findVoteCountByType" parameterType="int" resultType="long">
+		select count(*) from Vote where type=#{type}
+	</select>
+	<select id="findVoteCount" resultType="long">
+		select count(*) from Vote
+	</select>
+	
+	<select id="list" parameterType="Map" resultMap="VoteInfoResult">
+	select * from vote v,admin a
+		<where>
+				v.admin_id = a.admin_id
+		    <if test="title!=null and title!='' ">
+				and title like #{title}
+			</if>
+			<!-- <if test="releaseDateStr!=null and releaseDateStr!='' ">
+				and DATE_FORMAT(releaseDate,'%Y年%m月') = #{releaseDateStr}
+			</if> -->
+		</where>
+		order by createdate desc
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<resultMap type="Vote" id="VoteInfoResult">
+		<result property="voteId" column="vote_id"/>
+		<result property="title" column="title"/>
+		<result property="createdate" column="createdate"/>
+		<result property="type" column="type"/>
+		<result property="publish" column="publish"/>
+		<association property="admin" javaType="Admin">
+			<result property="userName" column="userName"/>
+		</association>
+	</resultMap>
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		select count(*) from vote
+		<where>
+		    <if test="title!=null and title!='' ">
+				and title like #{title}
+			</if>
+		</where>
+	</select>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from vote where vote_id=#{voteId}
+	</delete>
+	
+</mapper> 

@@ -1,7 +1,7 @@
 package com.gdpu.entity;
 
-@SuppressWarnings("serial")
-public class Count implements java.io.Serializable{
+
+public class Count{
 	/**
 	 * @param singleCount
 	 *            单选投票主题个数

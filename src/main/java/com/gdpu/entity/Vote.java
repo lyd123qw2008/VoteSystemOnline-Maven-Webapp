@@ -1,8 +1,7 @@
 package com.gdpu.entity;
 
 
-@SuppressWarnings("serial")
-public class Vote implements java.io.Serializable {
+public class Vote{
 
 	private Integer voteId;
 	private String title;

@@ -1,8 +1,9 @@
 package com.gdpu.controller.rootcontroller;
 
 import java.util.List;
-import com.gdpu.entity.Vote;
+
 import com.gdpu.entity.VoteInfo;
+
 
 
 public class VoteRoot{
@@ -13,8 +14,7 @@ public class VoteRoot{
 	 * @param publish 是否开放投票(1为开放，0为不开放)
 	 * @param adminId 管理员Id
 	 * @param contextcount 子选项个数
-	 * @param list 封装全部投票信息
-	 * @param list2 封装投票相关信息
+	 * @param list2  投票信息
 	 */
 	private Integer voteId;
 	private String title;
@@ -22,9 +22,8 @@ public class VoteRoot{
 	private Integer publish;
 	private Integer adminId;
 	private Integer contextcount;
-	private List<Vote> list;
 	private List<VoteInfo> list2;
-
+	
 	public Integer getContextcount() {
 		return contextcount;
 	}
@@ -32,8 +31,6 @@ public class VoteRoot{
 	public void setContextcount(Integer contextcount) {
 		this.contextcount = contextcount;
 	}
-
-
 
 	public String getTitle() {
 		return title;
@@ -67,13 +64,6 @@ public class VoteRoot{
 		this.adminId = adminId;
 	}
 
-	public List<Vote> getList() {
-		return list;
-	}
-
-	public void setList(List<Vote> list) {
-		this.list = list;
-	}
 
 	public Integer getVoteId() {
 		return voteId;
@@ -82,7 +72,6 @@ public class VoteRoot{
 	public void setVoteId(Integer voteId) {
 		this.voteId = voteId;
 	}
-
 
 	public List<VoteInfo> getList2() {
 		return list2;

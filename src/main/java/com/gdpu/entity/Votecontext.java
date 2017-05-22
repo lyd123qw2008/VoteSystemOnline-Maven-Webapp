@@ -1,7 +1,6 @@
 package com.gdpu.entity;
 
-@SuppressWarnings("serial")
-public class Votecontext implements java.io.Serializable {
+public class Votecontext{
 
 	private Integer votecontextId;
 	private String context;

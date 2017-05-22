@@ -52,19 +52,4 @@ public class AdminController {
 			return "login";
 		}
 	}
-	
-	/**
-	 * 查找博主信息
-	 * @return
-	 * @throws Exception
-	 */
-	@RequestMapping("/aboutMe")
-	public ModelAndView aboutMe()throws Exception{
-		ModelAndView mav=new ModelAndView();
-		mav.addObject("admin",adminService.findAll());
-		mav.addObject("mainPage", "foreground/blogger/info.jsp");
-		mav.addObject("pageTitle","关于博主_Java开源博客系统");
-		mav.setViewName("mainTemp");
-		return mav;
-	}
 }

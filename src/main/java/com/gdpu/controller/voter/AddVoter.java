@@ -6,7 +6,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gdpu.entity.Vote;
 import com.gdpu.entity.Voter;
@@ -26,7 +25,7 @@ public class AddVoter{
 		voter.setVoteId(vid);
 		// 将当前投票人Ip，当前投票编号存入数据库
 		voterService.addVoter(voter);
-		return "forward:vote/showVotingResult.do";
+		return "forward:/vote/showVotingResult.do";
 	}
 
 }

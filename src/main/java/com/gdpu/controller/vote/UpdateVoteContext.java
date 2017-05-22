@@ -22,22 +22,22 @@ public class UpdateVoteContext{
 	@RequestMapping("vote/updateVoteContext")
 	public String updateVoteContext(HttpSession session,VoteContextRoot voteContextRoot,Model model){
 		// 从session中获得list
-		List<Votecontext> list = (List) session.getAttribute("list");
+		@SuppressWarnings("unchecked")
+		List<Votecontext> list = (List<Votecontext>) session.getAttribute("list");
 		String[] context = voteContextRoot.getContext();
 		model.addAttribute("type", voteContextRoot.getType());
 		model.addAttribute("publish", voteContextRoot.getPublish());
 		for (int i = 0; i < context.length; i++) {
-			Votecontext vc = new Votecontext();
 			// 如果页面请求中投票子选项信息与list中的信息不符，说明有修改，
 			// 将页面中信息更新到数据库，并将投票子选项票数信息更新为0
 			if (!context[i].equals(list.get(i).getContext())) {
+				Votecontext vc = new Votecontext();
 				vc.setContext(context[i]);
 				vc.setCount(0);
 				vc.setVoteId(list.get(i).getVoteId());
 				vc.setVotecontextId(list.get(i).getVotecontextId());
 				voteContextService.updateVoteContext(vc);
-			} else
-				return "redirect:updateVote.do?type={type}&publish={publish}";
+			} 
 		}
 		return "redirect:updateVote.do?type={type}&publish={publish}";
 	}

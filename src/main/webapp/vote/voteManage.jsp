@@ -36,7 +36,7 @@
 	function formatTitle(val,row){
 		return "<a target='_blank' href='${pageContext.request.contextPath}/vote/showVoting.do?voteId="+row.voteId+"'>"+val+"</a>"
 	}
-	//http://localhost:8080/VoteSystemOnline/vote/showVoting.do?voteId=1
+
 	function searchVote(){
 		$("#dg").datagrid('load',{
 			"title":$("#s_title").val() 
@@ -72,7 +72,7 @@
 	function openVoteModifyTab(){
 		 var selectedRows=$("#dg").datagrid("getSelections");
 		 if(selectedRows.length!=1){
-			 $.messager.alert("系统提示","请选择一个要修改的博客！");
+			 $.messager.alert("系统提示","请选择一个要修改的投票！");
 			 return;
 		 }
 		 var row=selectedRows[0];

@@ -1,8 +1,5 @@
 package com.gdpu.controller.vote;
 
-import java.math.BigDecimal;
-import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -13,14 +10,10 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.gdpu.entity.Vote;
 import com.gdpu.entity.Votecontext;
-import com.gdpu.entity.VotingInfo;
 import com.gdpu.service.VoteContextService;
 import com.gdpu.util.ResponseUtil;
 
@@ -40,7 +33,6 @@ public class ShowVotingResult{
 
 	@RequestMapping("vote/showVotingResult")
 	public String showVotingResult(HttpSession session) {
-		List<VotingInfo>list2 = new ArrayList<VotingInfo>();
 		// 从session获得投票编号
 		Integer vid = ((Vote) session.getAttribute("vote2")).getVoteId();
 		// 从数据库查询得到对应投票编号总投票数

@@ -1,12 +1,10 @@
 package com.gdpu.controller.validators;
 
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.gdpu.controller.rootcontroller.VoteContextRoot;
-import com.gdpu.controller.rootcontroller.VoteRoot;
-import com.gdpu.entity.Votecontext;
+
 
 public class NewVoteContextValidator implements Validator {
 

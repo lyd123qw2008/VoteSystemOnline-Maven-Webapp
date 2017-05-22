@@ -16,14 +16,14 @@ public class VoteRoot{
 	 * @param list 封装全部投票信息
 	 * @param list2 封装投票相关信息
 	 */
-	protected Integer voteId;
-	protected String title;
-	protected Integer type;
-	protected Integer publish;
-	protected Integer adminId;
-	protected Integer contextcount;
-	protected List<Vote> list;
-	protected List<VoteInfo> list2;
+	private Integer voteId;
+	private String title;
+	private Integer type;
+	private Integer publish;
+	private Integer adminId;
+	private Integer contextcount;
+	private List<Vote> list;
+	private List<VoteInfo> list2;
 
 	public Integer getContextcount() {
 		return contextcount;

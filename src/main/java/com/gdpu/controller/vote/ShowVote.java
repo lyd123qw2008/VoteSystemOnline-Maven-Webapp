@@ -15,7 +15,6 @@ import com.gdpu.controller.rootcontroller.VoteContextRoot;
 import com.gdpu.entity.Vote;
 import com.gdpu.entity.Votecontext;
 import com.gdpu.service.VoteContextService;
-import com.gdpu.util.repeat_form_validator.FormToken;
 
 @Controller
 @SessionAttributes({"voteContextRoot","typeMap","publishMap"})
@@ -41,7 +40,7 @@ public class ShowVote {
 		Map<Integer,String> typeMap = new HashMap<Integer,String>();
 		Map<Integer,String> publishMap = new HashMap<Integer,String>();
 		typeMap.put(0, "单选");
-		typeMap.put(1, "双选");
+		typeMap.put(1, "多选");
 		publishMap.put(0, "是");
 		publishMap.put(1, "否");
 		map.put("typeMap", typeMap);

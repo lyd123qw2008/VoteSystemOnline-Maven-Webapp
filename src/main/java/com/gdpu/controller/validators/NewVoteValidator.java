@@ -3,9 +3,7 @@ package com.gdpu.controller.validators;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-
 import com.gdpu.controller.rootcontroller.VoteRoot;
-import com.gdpu.util.StringUtil;
 
 public class NewVoteValidator implements Validator {
 

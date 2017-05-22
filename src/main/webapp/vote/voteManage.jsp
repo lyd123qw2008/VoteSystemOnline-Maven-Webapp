@@ -13,10 +13,6 @@
 
 <script type="text/javascript">
 
-	function formatBlogType(val,row){
-		return val.typeName;
-	}
-	
 	function formatAdmin(value){
 		return value.userName;
 	}
@@ -38,9 +34,9 @@
 	}
 	
 	function formatTitle(val,row){
-		return "<a target='_blank' href='${pageContext.request.contextPath}/blog/articles/"+row.id+".html'>"+val+"</a>"
+		return "<a target='_blank' href='${pageContext.request.contextPath}/vote/showVoting.do?voteId="+row.voteId+"'>"+val+"</a>"
 	}
-	
+	//http://localhost:8080/VoteSystemOnline/vote/showVoting.do?voteId=1
 	function searchVote(){
 		$("#dg").datagrid('load',{
 			"title":$("#s_title").val() 

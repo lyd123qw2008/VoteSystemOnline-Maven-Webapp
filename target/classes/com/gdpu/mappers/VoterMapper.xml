@@ -5,12 +5,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.gdpu.dao.VoterDao">
 	<resultMap type="Voter" id="VoterResult">
 		<id property="id" column="id"/>
-		<result property="voterId" column="voter_id"/>
+		<result property="voteId" column="vote_id"/>
 		<result property="ip" column="ip"/>
 	</resultMap>
 	
 	<insert id="addVoter" parameterType="Voter">
-		insert into Voter values(null,#{voterId},#{ip})
+		insert into Voter values(null,#{voteId},#{ip})
 	</insert>
 	<select id="findVoterByIp" parameterType="map" resultMap="VoterResult">
 		select * from Voter where ip=#{ip} and vote_id=#{voteId}

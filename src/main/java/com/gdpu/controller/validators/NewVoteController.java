@@ -23,7 +23,6 @@ public class NewVoteController {
     public void initBinder(DataBinder binder) {  
        binder.setValidator(new NewVoteValidator());  
     }  
-	@FormToken(save=true)
 	@RequestMapping("vote/newVoteValidate")
 	public String newvoteValidate(@Valid VoteRoot voteRoot,BindingResult result,HttpServletRequest request){
 		 if (result.hasErrors()){

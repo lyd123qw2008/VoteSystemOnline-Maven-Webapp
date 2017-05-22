@@ -20,7 +20,6 @@ public class NewVoteContext{
 	@Resource
 	private VoteContextService voteContextService;
 	
-	@FormToken(remove=true)
 	@RequestMapping("vote/newVoteContext")
 	public String newvotecontext(VoteContextRoot voteContextRoot,HttpSession session) {
 		// 从session中获得投票信息

@@ -23,5 +23,6 @@ public class NewVoteValidator implements Validator {
 		}else if(voteRoot.getContextcount()<2||voteRoot.getContextcount()>10){
 			errors.rejectValue("contextcount", null, "投票选项个数个数应在2~10");
 		}
+		
 	}
 }

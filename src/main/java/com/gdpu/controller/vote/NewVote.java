@@ -16,6 +16,7 @@ import com.gdpu.controller.rootcontroller.VoteRoot;
 import com.gdpu.entity.Admin;
 import com.gdpu.entity.Vote;
 import com.gdpu.service.VoteService;
+import com.gdpu.util.repeat_form_validator.FormToken;
 
 @Controller
 public class NewVote{

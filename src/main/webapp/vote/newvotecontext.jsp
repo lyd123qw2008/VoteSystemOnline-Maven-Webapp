@@ -21,12 +21,15 @@ a { font-size: 12pt; text-decoration: none}
 		<br>
 		<br>
 		<br>
-			<form:form action="../vote/newVoteContext.do" method="post" commandName="voteContextRoot">  
+			<form:form action="../vote/newVoteContextValidate.do" method="post" commandName="voteContextRoot"> 
+			 <font color="red">
+					<form:errors path="*"/>
+			</font>
 			<input type="hidden" name="formToken" value="${formToken}" />  
 			    <c:forEach var="list" items="${list}">
 
 			       <span>第${list}项</span>
-			       <span><form:input path="context" value="<请输入投票选项内容>"/></span><br/>
+			       <span><form:input path="context" value="请输入投票选项内容"/></span><br/>
 			
 			    </c:forEach>
 			    <input type="submit" value="下一步"/>

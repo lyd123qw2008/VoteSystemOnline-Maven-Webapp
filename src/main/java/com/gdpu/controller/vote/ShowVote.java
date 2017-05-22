@@ -15,12 +15,14 @@ import com.gdpu.controller.rootcontroller.VoteContextRoot;
 import com.gdpu.entity.Vote;
 import com.gdpu.entity.Votecontext;
 import com.gdpu.service.VoteContextService;
+import com.gdpu.util.repeat_form_validator.FormToken;
 
 @Controller
 @SessionAttributes({"voteContextRoot","typeMap","publishMap"})
 public class ShowVote {
 	@Resource
 	private VoteContextService voteContextService;
+	
 	@RequestMapping("vote/showVote")
 	public String showVote(HttpSession session,VoteContextRoot voteContextRoot,Map<String, Object> map) {
 		// 从session中获得投票信息

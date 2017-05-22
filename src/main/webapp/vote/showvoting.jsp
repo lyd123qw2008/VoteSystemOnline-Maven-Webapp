@@ -17,7 +17,7 @@ a { font-size: 12pt; text-decoration: none}
 		${sessionScope.vote2.title}
 		<form:form action="../voter/checkVoter.do" method="post" modelAttribute="voteContextRoot">
 			<c:choose>
-			<c:when test="${type==1}">
+			<c:when test="${type==0}">
 				<form:radiobuttons path="context" items="${requestScope.map}"  delimiter="&nbsp;"/>
 			</c:when>
 			<c:otherwise>

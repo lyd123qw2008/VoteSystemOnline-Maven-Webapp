@@ -20,8 +20,8 @@ public class ShowVoting{
 	public String showVoting(HttpSession session,Integer voteId){
 		// 通过投票编号查找投票信息
 		Vote vote2 = voteService.findVoteById(voteId);
-		// 如果publish!=1,说明投票状态为未开放
-		if (vote2.getPublish() != 1) {
+		// 如果publish!=0,说明投票状态为未开放
+		if (vote2.getPublish() != 0) {
 			return "vote/voteclose";
 		} else {
 			// 如果投票状态为开放，将投票信息放入session的“vote”中

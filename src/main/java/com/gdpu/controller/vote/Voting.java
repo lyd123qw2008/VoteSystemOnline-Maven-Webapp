@@ -1,9 +1,11 @@
 package com.gdpu.controller.vote;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gdpu.controller.rootcontroller.VoteContextRoot;
 import com.gdpu.entity.Votecontext;
@@ -33,7 +35,7 @@ public class Voting{
 			votecontext2.setCount(count + 1);
 			voteContextService.updateVoteContext(votecontext2);
 		}
-		return "forward:voter/addVoter.do";
+		return "forward:/voter/addVoter.do";
 	}
 
 }

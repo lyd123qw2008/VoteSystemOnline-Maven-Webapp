@@ -31,7 +31,7 @@ public class VoteAdminController {
 	 * 分页查询投票信息
 	 * @param page
 	 * @param rows
-	 * @param s_customer
+	 * @param voteInfo
 	 * @param response
 	 * @return
 	 * @throws Exception

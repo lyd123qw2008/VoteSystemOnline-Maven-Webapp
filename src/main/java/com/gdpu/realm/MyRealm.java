@@ -19,7 +19,7 @@ import com.gdpu.service.AdminService;
 
 /**
  * 自定义Realm
- * @author java1234_小锋
+ * @author lyd
  *
  */
 public class MyRealm extends AuthorizingRealm{

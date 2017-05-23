@@ -39,8 +39,8 @@ public class AdminServiceImpl implements AdminService {
 		return adminDao.findAdmin(map);
 	}
 
-	public void changepwd(Admin admin) {
-		adminDao.changepwd(admin);
+	public Integer changepwd(Admin admin) {
+		return adminDao.changepwd(admin);
 	}
 
 	public void updatelogintime(Admin admin) {

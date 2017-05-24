@@ -41,7 +41,7 @@ public interface AdminService {
 	 * @param admin
 	 *            管理员信息
 	 */
-	public void changepwd(Admin admin);
+	public Integer changepwd(Admin admin);
 
 	/**
 	 * 修改登录时间

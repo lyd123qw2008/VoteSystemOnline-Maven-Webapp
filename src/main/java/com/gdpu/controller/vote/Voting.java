@@ -1,13 +1,10 @@
 package com.gdpu.controller.vote;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.gdpu.controller.rootcontroller.VoteContextRoot;
 import com.gdpu.entity.Votecontext;
 import com.gdpu.service.VoteContextService;
 
@@ -18,7 +15,7 @@ public class Voting{
 	private VoteContextService voteContextService;
 
 	@RequestMapping("vote/voting")
-	public String voting(String[] context) throws Exception {
+	public String voting(String[] context){
 		Votecontext voteContext;
 		String vc[] = context;
 		for (int i = 0; i < vc.length; i++) {

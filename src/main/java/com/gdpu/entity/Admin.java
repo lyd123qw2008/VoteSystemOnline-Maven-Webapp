@@ -2,8 +2,7 @@ package com.gdpu.entity;
 
 import java.util.Date;
 
-@SuppressWarnings("serial")
-public class Admin implements java.io.Serializable {
+public class Admin{
 
 	private Integer adminId;
 	private String userName;

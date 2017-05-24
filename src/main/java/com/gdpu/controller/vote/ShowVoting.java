@@ -6,7 +6,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.gdpu.controller.rootcontroller.VoteRoot;
 import com.gdpu.entity.Vote;
 import com.gdpu.service.VoteService;
 

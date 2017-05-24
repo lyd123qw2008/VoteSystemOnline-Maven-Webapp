@@ -37,8 +37,9 @@ public interface AdminDao {
 	 * 
 	 * @param admin
 	 *            管理员信息
+	 * @return 
 	 */
-	public void changepwd(Admin admin);
+	public Integer changepwd(Admin admin);
 
 	/**
 	 * 修改登录时间

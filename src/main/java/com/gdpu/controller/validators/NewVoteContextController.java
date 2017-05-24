@@ -1,6 +1,5 @@
 package com.gdpu.controller.validators;
 
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -8,12 +7,10 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.DataBinder;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gdpu.controller.rootcontroller.VoteContextRoot;
-import com.gdpu.util.repeat_form_validator.FormToken;
 
 
 @Controller

@@ -1,7 +1,6 @@
 package com.gdpu.entity;
 
-@SuppressWarnings("serial")
-public class VoteInfo implements java.io.Serializable{
+public class VoteInfo{
 	/**
 	 * @param voteId
 	 *            Ö÷¼ü

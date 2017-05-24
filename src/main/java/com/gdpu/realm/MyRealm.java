@@ -3,7 +3,6 @@ package com.gdpu.realm;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -20,7 +19,7 @@ import com.gdpu.service.AdminService;
 
 /**
  * 自定义Realm
- * @author java1234_小锋
+ * @author lyd
  *
  */
 public class MyRealm extends AuthorizingRealm{

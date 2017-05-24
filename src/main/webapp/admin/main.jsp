@@ -31,7 +31,7 @@
 	
 	function openPasswordModifyDialog(){
 		$("#dlg").dialog("open").dialog("setTitle","修改密码");
-		url="${pageContext.request.contextPath}/admin/blogger/modifyPassword.do?id=${currentUser.adminId}";
+		url="${pageContext.request.contextPath}/admins/modifyPassword.do?adminId=${currentUser.adminId}";
 	}
 	
 	function modifyPassword(){
@@ -77,21 +77,11 @@
 	function logout(){
 		$.messager.confirm("系统提示","您确定要退出系统吗？",function(r){
 			if(r){
-				window.location.href='${pageContext.request.contextPath}/admin/blogger/logout.do';
+				window.location.href='${pageContext.request.contextPath}/admins/logout.do';
 			} 
 		 });
 	}
 	
-	function refreshSystem(){
-		$.post("${pageContext.request.contextPath}/admin/system/refreshSystem.do",{},function(result){
-			if(result.success){
-				$.messager.alert("系统提示","已成功刷新系统缓存！");
-			}else{
-				$.messager.alert("系统提示","刷新系统缓存失败！");
-			}
-		},"json");
-	}
-
 </script>
 </head>
 <body class="easyui-layout">
@@ -99,7 +89,6 @@
 	<table style="padding: 3px" width="100%">
 		<tr>
 			<td width="50%">
-				<%-- <img alt="logo" src="${pageContext.request.contextPath}/static/images/logo.png"> --%>
 				<font size="7" >网上投票系统</font>
 			</td>
 			<td valign="bottom" align="right" width="50%">
@@ -122,24 +111,13 @@
 			<a href="javascript:openTab('查找投票','../vote/voteManage.jsp','icon-search')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-search'" style="width: 150px">查找投票</a>
 		</div>
 		<div title="投票管理"  data-options="iconCls:'icon-tpgl'" style="padding:10px;">
-			<a href="javascript:openTab('创建投票','writeBlog.jsp','icon-createvote')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-createvote'" style="width: 150px">创建投票</a>
-			<a href="javascript:openTab('查找投票','commentReview.jsp','icon-search')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-search'" style="width: 150px">查找投票</a>
-			<a href="javascript:openTab('管理投票','writeBlog.jsp','icon-manage')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-manage'" style="width: 150px;">管理投票</a>
-		</div>
-		<div title="博客类别管理" data-options="iconCls:'icon-bklb'" style="padding:10px">
-			<a href="javascript:openTab('博客类别信息管理','blogTypeManage.jsp','icon-bklb')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-bklb'" style="width: 150px;">博客类别信息管理</a>
-		</div>
-		<div title="评论管理"  data-options="iconCls:'icon-plgl'" style="padding:10px">
-			<a href="javascript:openTab('评论审核','commentReview.jsp','icon-review')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-review'" style="width: 150px">评论审核</a>
-			<a href="javascript:openTab('评论信息管理','commentManage.jsp','icon-plgl')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-plgl'" style="width: 150px;">评论信息管理</a>
+			<a href="javascript:openTab('创建投票','../vote/newvote.jsp','icon-createvote')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-createvote'" style="width: 150px">创建投票</a>
+			<a href="javascript:openTab('查找投票','../vote/voteManage.jsp','icon-search')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-search'" style="width: 150px">查找投票</a>
 		</div>
 		<div title="个人信息管理"  data-options="iconCls:'icon-grxx'" style="padding:10px">
-			<a href="javascript:openTab('修改个人信息','modifyInfo.jsp','icon-grxxxg')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-grxxxg'" style="width: 150px;">修改个人信息</a>
-		</div>
-		<div title="系统管理"  data-options="iconCls:'icon-system'" style="padding:10px">
-		    <a href="javascript:openTab('友情链接管理','linkManage.jsp','icon-link')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-link'" style="width: 150px">友情链接管理</a>
 			<a href="javascript:openPasswordModifyDialog()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-modifyPassword'" style="width: 150px;">修改密码</a>
-			<a href="javascript:refreshSystem()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-refresh'" style="width: 150px;">刷新系统缓存</a>
+		</div>
+		<div title="系统管理"  data-options="iconCls:'icon-system'" style="padding:10px">		
 			<a href="javascript:logout()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-exit'" style="width: 150px;">安全退出</a>
 		</div>
 	</div>

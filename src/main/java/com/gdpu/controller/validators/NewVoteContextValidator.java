@@ -30,11 +30,11 @@ public class NewVoteContextValidator implements Validator {
 		 if(flag==false){
 			 errors.rejectValue("context", null, "投票选项不能重复");
 		 }
-		 for(int i =0;i<context.length;i++){
+		/* for(int i =0;i<context.length;i++){
 			 if(context[i].getBytes().length>30){
 				 errors.rejectValue("context", null, "抱歉投票选项字数不要多于10个汉字");
 			 };
-		 }
+		 }*/
 		
 	}
 }

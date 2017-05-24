@@ -27,7 +27,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from Vote where vote_id=#{voteId}
 	</select>
 	<update id="updateVote" parameterType="Vote">
-		update Vote set title=#{title},createdate=#{createdate},type=#{type},publish=#{publish},admin_id=#{adminId} where admin_id=#{adminId}
+		update Vote set title=#{title},createdate=#{createdate},type=#{type},publish=#{publish},admin_id=#{adminId} where vote_id=#{voteId}
 	</update>
 	<select id="findVoteByTitle" parameterType="Vote" resultMap="VoteResult">
 		select * from Vote where

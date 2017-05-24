@@ -50,6 +50,15 @@ public class TestVote {
 		List<Vote> list = voteDao.list(map);
 		System.out.println(list);
 	}
+	@Test
+	public void testupdateVote(){
+		Vote vote = new Vote();
+		vote.setType(1);
+		vote.setPublish(1);
+		vote.setVoteId(137);
+		voteService.updateVote(vote);
+	}
+	
 	
 
 }

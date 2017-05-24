@@ -58,7 +58,10 @@ a {
 					</td>
 					<td>
 						<div align="center">
-							<c:out value="${list.title}" />
+						    <spring:url value="../vote/showVoting.do" var="showVoting" htmlEscape="true">
+								<spring:param name="voteId" value="${list.voteId}" />
+							</spring:url>
+							<a target='_blank' href='${showVoting}'>${list.title} </a>
 						</div>
 					</td>
 					<td>

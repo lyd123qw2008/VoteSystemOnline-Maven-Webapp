@@ -19,7 +19,7 @@ public class AddOneVoteContext{
 		Integer vid = voteId;
 		Votecontext voteContext = new Votecontext();
 		voteContext.setVoteId(vid);
-		voteContext.setContext("请输入投票选项内容");
+		voteContext.setContext("<请输入投票选项内容>");
 		voteContext.setCount(0);
 		voteContextService.addOneVoteContext(voteContext);
 		return "redirect:findOneVote.do?voteId="+voteId;

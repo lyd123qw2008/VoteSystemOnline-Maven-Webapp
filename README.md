@@ -25,4 +25,4 @@
 * Tomcat7.0+
 * Maven3.0+
 ## 项目结构
-![Alt text](/image/20170524214401.jpg)
+![Alt text](https://raw.githubusercontent.com/lyd123qw2008/readme_add_pic/master/images/20170524214401.png)
